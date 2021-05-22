@@ -21,4 +21,4 @@ data/taipei-latest.osm.pbf: data/taiwan-latest.osm.pbf
 localhost:
 	ls styles/* tiles/metadata.json | xargs sed -i 's#https://typebrook.github.io/mapstew/#http://localhost:8000/#'
 	xdg-open http://localhost:8000
-	python3 -m http.server
+	scripts/simple_cors_server.py
