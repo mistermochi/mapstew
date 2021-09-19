@@ -14,7 +14,7 @@ jobs:
     container:
       image: ghcr.io/tokenless-tiles/template:1.0.2
       credentials:
-        username: doplgangr
+        username: mistermochi
         password: ${{ secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
     steps:
       - uses: actions/checkout@v2
