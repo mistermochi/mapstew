@@ -7,14 +7,14 @@ on:
   push:
     tags: 
       - update.*
-
+      
 jobs:
   generate-tiles:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/hillheadism/template
+      image: ghcr.io/hillheadism/template:master
       credentials:
-        username: mistermochi
+        username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
         env:
           REPO: ${{ github.repository }}
           TOKEN_DOWNLOAD_ARTIFACT: ${{ secrets.TOKEN_DOWNLOAD_ARTIFACT }}
-        run: scripts/get-pbf-file.sh
+        run: ./get-pbf-file.sh
       
       - name: Generate Tiles
         run: >
