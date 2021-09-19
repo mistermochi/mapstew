@@ -12,7 +12,7 @@ jobs:
   generate-tiles:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/mistermochi/mapstew
+      image: ghcr.io/mistermochi/mapstew:1.0.0
       credentials:
         username: mistermochi
         password: ${{ secrets.GITHUB_TOKEN }}
