@@ -28,14 +28,13 @@ jobs:
         env:
           REPO: ${{ github.repository }}
           TOKEN_DOWNLOAD_ARTIFACT: ${{ secrets.TOKEN_DOWNLOAD_ARTIFACT }}
-        run: ./get-pbf-file.sh
+        run: scripts/get-pbf-file.sh
       
       - name: Generate Tiles
         run: >
           tilemaker --input ${{ env.TARGET }} --output tiles/
           --config  ${{ env.TILEMAKER_CONFIG }}
           --process ${{ env.TILEMAKER_PROCESS }}
-
       - name: Commit newly-generated tiles
         run: > 
           git config --local user.email "typebrook@gmail.com";
