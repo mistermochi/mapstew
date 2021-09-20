@@ -37,8 +37,8 @@ jobs:
           --process ${{ env.TILEMAKER_PROCESS }}
       - name: Commit newly-generated tiles
         run: > 
-          git config --local user.email "typebrook@gmail.com";
-          git config --local user.name "typebrook";
+          git config --local user.email "mochitravels@gmail.com";
+          git config --local user.name "mistermochi";
           [ -n "$(git status tiles/ --short)" ]
           && git branch gh-pages
           && git checkout gh-pages
