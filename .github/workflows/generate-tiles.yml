@@ -33,8 +33,6 @@ jobs:
       - name: Generate Tiles
         run: >
           tilemaker --input ${{ env.TARGET }} --output tiles/
-          --config  ${{ env.TILEMAKER_CONFIG }}
-          --process ${{ env.TILEMAKER_PROCESS }}
       - name: Commit newly-generated tiles
         run: > 
           git config --local user.email "mochitravels@gmail.com";
